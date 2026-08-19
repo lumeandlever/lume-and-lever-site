@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lume and Lever | Bespoke Watch Design & Assembly</title>
+  
+  <!-- Domain & SEO Tags -->
+  <link rel="canonical" href="https://lumeandlever.com/">
+  <meta name="description" content="Lume and Lever — Custom watch design, precision mechanical movement assembly, bespoke dial creation, and horological regulation services.">
+  <meta property="og:title" content="Lume and Lever | Bespoke Watch Design & Assembly">
+  <meta property="og:description" content="Custom horology, movement regulation, and one-off bespoke timepiece builds.">
+  <meta property="og:url" content="https://lumeandlever.com/">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --steel-grad: linear-gradient(180deg, #eaecef 0%, #c4cbd2 50%, #a4adb6 100%);
+      --steel-bevel: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(0,0,0,0.35);
+      --dark-bg: #0b0d10;
+      --card-bg: #14171d;
+      --card-hover: #1c212a;
+      --border-color: #272e3a;
+      --lume-glow: #5efcd8;
+      --text-main: #f0f3f6;
+      --text-muted: #8b94a0;
+      --radius: 6px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Brushed Steel Header */
+    header {
+      background: var(--steel-grad);
+      box-shadow: var(--steel-bevel), 0 4px 12px rgba(0, 0, 0, 0.45);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #6c7682;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.6rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .brand-logo-link:hover .brand-logo-img {
+      opacity: 0.85;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      color: #222;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    /* Hero Banner Section */
+    .hero-container {
+      max-width: 1200px;
+      margin: 1.5rem auto 0;
+      padding: 0 1.5rem;
+    }
+
+    .hero-frame {
+      width: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      border: 1px solid var(--border-color);
+      background: #000;
+    }
+
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Steel Section Bar */
+    .steel-bar {
+      background: var(--steel-grad);
+      box-shadow: var(--steel-bevel);
+      border-top: 1px solid #737e8a;
+      border-bottom: 1px solid #737e8a;
+      padding: 1.25rem 2rem;
+      margin: 3.5rem 0 2rem;
+      text-align: center;
+    }
+
+    .steel-bar h2 {
+      color: #111;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Gallery Grid */
+    .gallery-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .watch-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .watch-card:hover {
+      transform: translateY(-4px);
+      border-color: #3f4a5c;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-img-wrap {
+      width: 100%;
+      aspect-ratio: 9 / 14;
+      overflow: hidden;
+      background: #060709;
+      position: relative;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .watch-card:hover .card-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .card-info {
+      padding: 1.25rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-info h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+      color: #fff;
+    }
+
+    .card-info p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .inquire-link {
+      display: inline-block;
+      text-align: center;
+      padding: 0.5rem;
+      background: #1c222b;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--lume-glow);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+
+    .inquire-link:hover {
+      background: #252e3b;
+    }
+
+    /* Contact Form Section */
+    .contact-container {
+      max-width: 720px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+    }
+
+    .contact-card p {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .email-direct {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .email-direct a {
+      color: var(--lume-glow);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .email-direct a:hover {
+      text-decoration: underline;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--dark-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--lume-glow);
+      box-shadow: 0 0 10px rgba(94, 252, 216, 0.25);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      background: var(--steel-grad);
+      box-shadow: var(--steel-bevel);
+      color: #111;
+      border: 1px solid #6c7682;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    /* Brushed Steel Footer */
+    footer {
+      background: var(--steel-grad);
+      box-shadow: var(--steel-bevel);
+      border-top: 1px solid #737e8a;
+      color: #111;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo-img {
+      height: 42px;
+      width: auto;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-sub {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #2b3036;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .contact-card { padding: 1.5rem; }
+      .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+      .brand-logo-img { height: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Brushed Steel Header with Logo Image -->
+  <header>
+    <nav>
+      <a href="#" class="brand-logo-link">
+        <img src="images/logo.png" alt="Lume and Lever Logo" class="brand-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#builds">Featured Builds</a></li>
+        <li><a href="#contact">Commission Service</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Top Overview Graphic Banner -->
+    <section id="overview" class="hero-container">
+      <div class="hero-frame">
+        <img src="images/hero-overview.png" alt="Lume and Lever Bespoke Design, Customization, and Featured Builds Overview">
+      </div>
+    </section>
+
+    <!-- Steel Divider: Gallery -->
+    <div class="steel-bar" id="builds">
+      <h2>Featured Builds & Assembly Archive</h2>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-container">
+      <div class="gallery-grid">
+
+        <article class="watch-card">
+          <div class="card-img-wrap">
+            <img src="images/gmt-forged-carbon.png" alt="Forged Carbon GMT Custom Watch">
+          </div>
+          <div class="card-info">
+            <div>
+              <h3>Forged Carbon GMT</h3>
+              <p>Textured forged carbon dial, red arrow GMT hand, engraved damascus-pattern ceramic bezel, and brushed oyster link bracelet.</p>
+            </div>
+            <a href="#contact" class="inquire-link">Commission Similar</a>
+          </div>
+        </article>
+
+        <article class="watch-card">
+          <div class="card-img-wrap">
+            <img src="images/gmt-monochrome.png" alt="Slate Sunburst GMT with Black/Grey Bezel">
+          </div>
+          <div class="card-info">
+            <div>
+              <h3>Monochrome GMT</h3>
+              <p>Sunburst slate-grey dial with polished applied indices, dual-tone ceramic split bezel, and precision high-beat movement.</p>
+            </div>
+            <a href="#contact" class="inquire-link">Commission Similar</a>
+          </div>
+        </article>
+
+        <article class="watch-card">
+          <div class="card-img-wrap">
+            <img src="images/gmt-batman.png" alt="GMT with Blue and Black Bezel">
+          </div>
+          <div class="card-info">
+            <div>
+              <h3>Blue & Black GMT</h3>
+              <p>Deep sunburst anthracite dial with high-contrast blue/black 24-hour ceramic bezel insert and regulated automatic caliber.</p>
+            </div>
+            <a href="#contact" class="inquire-link">Commission Similar</a>
+          </div>
+        </article>
+
+        <article class="watch-card">
+          <div class="card-img-wrap">
+            <img src="images/diver-blue-patina.png" alt="Oceanic Diver on Distressed Leather NATO">
+          </div>
+          <div class="card-info">
+            <div>
+              <h3>Oceanic Voyager</h3>
+              <p>Fume textured gradient blue dial, aged patina luminous markers, gilt accents, cyclops date crystal, and rustic leather NATO strap.</p>
+            </div>
+            <a href="#contact" class="inquire-link">Commission Similar</a>
+          </div>
+        </article>
+
+        <article class="watch-card">
+          <div class="card-img-wrap">
+            <img src="images/gmt-lume-night.png" alt="High Grade Super-LumiNova Dark Shot">
+          </div>
+          <div class="card-info">
+            <div>
+              <h3>Night Vision Lume</h3>
+              <p>Fully illuminated BGW9 / C3 application across dial indices, 24-hour bezel markings, date aperture, and custom hand-set.</p>
+            </div>
+            <a href="#contact" class="inquire-link">Commission Similar</a>
+          </div>
+        </article>
+
+        <article class="watch-card">
+          <div class="card-img-wrap">
+            <img src="images/gmt-blue-orange.png" alt="Blue & Orange GMT Diver on Jubilee Bracelet">
+          </div>
+          <div class="card-info">
+            <div>
+              <h3>Deep Sea GMT</h3>
+              <p>Ocean blue dial with 12/6/9 Arabic numerals, vibrant orange quarter-bezel insert, orange GMT hand, and 5-link jubilee bracelet.</p>
+            </div>
+            <a href="#contact" class="inquire-link">Commission Similar</a>
+          </div>
+        </article>
+
+        <article class="watch-card">
+          <div class="card-img-wrap">
+            <img src="images/gmt-sprite.png" alt="Green and Black Sprite Ceramic GMT">
+          </div>
+          <div class="card-info">
+            <div>
+              <h3>Emerald Split GMT</h3>
+              <p>Two-tone green and black ceramic GMT bezel, sunray slate dial, framed date wheel, and custom regulated mechanical movement.</p>
+            </div>
+            <a href="#contact" class="inquire-link">Commission Similar</a>
+          </div>
+        </article>
+
+        <article class="watch-card">
+          <div class="card-img-wrap">
+            <img src="images/diver-coke-pelagos.png" alt="Classic Diver with Red and Black Bezel">
+          </div>
+          <div class="card-info">
+            <div>
+              <h3>Classic Red-Bezel Diver</h3>
+              <p>Matte black dial, square applied lumed indices, red second hand, red/black diver bezel, and solid link stainless steel bracelet.</p>
+            </div>
+            <a href="#contact" class="inquire-link">Commission Similar</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Steel Divider: Contact -->
+    <div class="steel-bar" id="contact">
+      <h2>Contact for Service & Commissions</h2>
+    </div>
+
+    <!-- Contact Form Section -->
+    <section class="contact-container">
+      <div class="contact-card">
+        <p>Inquire about commissioning a one-off build, component sourcing, custom hand-fitting, or precision regulation.</p>
+        
+        <div class="email-direct">
+          Direct Contact: <a href="mailto:lumeandlever@gmail.com">lumeandlever@gmail.com</a>
+        </div>
+
+        <form action="https://formsubmit.co/lumeandlever@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Lume & Lever Commission Inquiry">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="form-group">
+            <label for="client_name">Full Name</label>
+            <input type="text" id="client_name" name="name" required placeholder="Your name">
+          </div>
+
+          <div class="form-group">
+            <label for="client_email">Email Address</label>
+            <input type="email" id="client_email" name="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="service_type">Service Requested</label>
+            <select id="service_type" name="service_type" required>
+              <option value="Full Custom Build Commission">Full Custom Build Commission</option>
+              <option value="Movement Assembly & Regulation">Movement Assembly & Regulation</option>
+              <option value="Dial, Bezel & Hand Modification">Dial, Bezel & Hand Modification</option>
+              <option value="Custom Fitment / Parts Consultation">Custom Fitment / Parts Consultation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="build_specs">Build Specifications & Preferences</label>
+            <textarea id="build_specs" name="specs" rows="5" required placeholder="Specify your desired movement type, case diameter/profile, dial style (e.g. Forged Carbon, Sunburst Slate), bezel color, lume grade, strap/bracelet choice..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Service Request</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Brushed Steel Footer -->
+  <footer>
+    <img src="images/logo.png" alt="Lume and Lever Logo" class="footer-logo-img"><br>
+    <div class="footer-sub">&copy; 2026 Lume and Lever Watch Co. All Rights Reserved. &bull; lumeandlever.com</div>
+  </footer>
+
+</body>
+</html>
