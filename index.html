@@ -22,6 +22,7 @@
       --card-hover: #1c212a;
       --border-color: #272e3a;
       --lume-glow: #5efcd8;
+      --accent-gold: #d4af37;
       --text-main: #f0f3f6;
       --text-muted: #8b94a0;
       --radius: 6px;
@@ -140,6 +141,76 @@
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+
+    /* Featured Spotlight Section */
+    .spotlight-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .spotlight-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
+      align-items: center;
+    }
+
+    .spotlight-img-wrap {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      background: #060709;
+      overflow: hidden;
+    }
+
+    .spotlight-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .spotlight-card:hover .spotlight-img-wrap img {
+      transform: scale(1.02);
+    }
+
+    .spotlight-content {
+      padding: 3rem;
+    }
+
+    .spotlight-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .spotlight-content h3 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .spotlight-content p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
     /* Gallery Grid */
@@ -353,6 +424,12 @@
       color: #2b3036;
     }
 
+    @media (max-width: 900px) {
+      .spotlight-card { grid-template-columns: 1fr; }
+      .spotlight-img-wrap { min-height: 320px; aspect-ratio: 16 / 10; }
+      .spotlight-content { padding: 2rem; }
+    }
+
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .contact-card { padding: 1.5rem; }
@@ -370,7 +447,8 @@
         <img src="images/logo.png" alt="Lume and Lever Logo" class="brand-logo-img">
       </a>
       <ul class="nav-links">
-        <li><a href="#overview">Overview</a></li>
+        <li><a href="#latest">Latest Design</a></li>
+        <li><a href="#overview">Customization</a></li>
         <li><a href="#builds">Featured Builds</a></li>
         <li><a href="#contact">Commission Service</a></li>
       </ul>
@@ -378,8 +456,27 @@
   </header>
 
   <main>
+    <!-- Steel Divider: Latest Release -->
+    <div class="steel-bar" id="latest" style="margin-top: 2rem;">
+      <h2>Latest Watch Design</h2>
+    </div>
+
+    <!-- Spotlight Section: Space Force -->
+    <section class="spotlight-container">
+      <article class="spotlight-card">
+        <div class="spotlight-img-wrap">
+          <img src="images/space-force-jacket.png" alt="Space Force Custom Automatic Watch Showcase">
+        </div>
+        <div class="spotlight-content">
+          <span class="spotlight-badge">Featured Concept & Build</span>
+          <h3>Space Force</h3>
+          <p>Built for midnight dogfights, asteroid hopping, and outer-rim rendezvous. Equal parts vintage cockpit and cosmic contraband, strapped to beat-up flight leather that looks like it survived a planetary re-entry.</p>
+        </div>
+      </article>
+    </section>
+
     <!-- Top Overview Graphic Banner -->
-    <section id="overview" class="hero-container">
+    <section id="overview" class="hero-container" style="margin-top: 3.5rem;">
       <div class="hero-frame">
         <img src="images/hero-overview.png" alt="Lume and Lever Bespoke Design, Customization, and Featured Builds Overview">
       </div>
